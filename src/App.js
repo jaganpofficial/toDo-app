@@ -5,6 +5,9 @@ import {useState} from 'react';
 function App() {
   const [toDos,setToDos] = useState([])
   const [toDo,setToDo] = useState('')
+  const removeElement = () => {
+    setToDos((prev) => !prev);
+  };
   return (
     <div className="app">
       <div className="mainHeading">
@@ -34,7 +37,8 @@ function App() {
             <p>{obj.text}</p>
           </div>
           <div className="right">
-            <i className="fas fa-times"></i>
+            
+            <i onClick={removeElement} className="fas fa-times"></i>
           </div>
         </div>)
         }) }
