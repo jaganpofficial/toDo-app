@@ -21,8 +21,6 @@ function App() {
       <div className="todos">
         {
           toDos.map((obj)=>{
-
-          
           return (<div className="todo">
           <div className="left">
             <input onChange={(e)=>{
