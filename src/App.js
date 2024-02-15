@@ -6,7 +6,7 @@ function App() {
   const [toDos,setToDos] = useState([])
   const [toDo,setToDo] = useState('')
   const deleteTodo = (id) => {
-    console.log("id" + id);
+    
     const filteredItem = toDos.filter(todo => todo.id !== id);
     setToDos([filteredItem])};
   return (
