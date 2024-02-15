@@ -5,9 +5,10 @@ import {useState} from 'react';
 function App() {
   const [toDos,setToDos] = useState([])
   const [toDo,setToDo] = useState('')
-  const removeElement = () => {
-    setToDos((prev) => !prev);
-  };
+  const deleteTodo = (id) => {
+    console.log("id" + id);
+    const filteredItem = toDos.filter(todo => todo.id !== id);
+    setToDos([filteredItem])};
   return (
     <div className="app">
       <div className="mainHeading">
@@ -22,7 +23,9 @@ function App() {
         <i onClick={()=>setToDos([...toDos,{id:Date.now(), text: toDo,status: false}])} className="fas fa-plus"></i>
       </div>
       <div className="todos">
+        
         {
+          
           toDos.map((obj)=>{
           return (<div className="todo">
           <div className="left">
@@ -38,7 +41,7 @@ function App() {
           </div>
           <div className="right">
             
-            <i onClick={removeElement} className="fas fa-times"></i>
+            <i onClick={deleteTodo} className="fas fa-times"></i>
           </div>
         </div>)
         }) }
